@@ -1,6 +1,6 @@
-namespace ClassLibrary1
+﻿namespace ClassLibrary1
 {
-    internal class Employee
+    public class Employee
     {
     }
 }

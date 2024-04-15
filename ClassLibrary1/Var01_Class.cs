@@ -1,10 +1,12 @@
-﻿using System.Diagnostics;
-using System.Reflection.Metadata.Ecma335;
-using System.Text.RegularExpressions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class Var01_Class 
+    public class Var01_Class
     {
         internal static Var02_TheAudience ToString(string value)
         {
@@ -12,7 +14,6 @@ namespace ClassLibrary1
         }
 
         private DateTime dateTime;
-        private Var11_Discipline discipline;
         private Var09_Employees employees;
         private Var02_TheAudience theAudience;
         private Var04_Group group;
@@ -23,11 +24,6 @@ namespace ClassLibrary1
         {
             get { return dateTime.ToString(); }
             set { dateTime = DateTime.Parse(value); }
-        }
-        public string Discipline
-        {
-            get { return discipline.ToString(); }
-            set { discipline = Var11_Discipline.ToString(value); }
         }
         public string Employees
         {
@@ -58,12 +54,29 @@ namespace ClassLibrary1
         public Var01_Class(string dateTime, string discipline, string employees, string theAudience, string group, string couple, string classes)
         {
             datetime = dateTime;
-            Discipline = discipline;
             Employees = employees;
             TheAudience = theAudience;
             Group = group;
             Couple = couple;
             Classes = classes;
+        }
+
+        public Var01_Class()
+        {
+
+        }
+
+        public double Div(double n1, double n2)
+        {
+            // Проверка деления на "0"
+            if (n2 == 0.0D)
+                throw new DivideByZeroException();
+            return n1 / n2;
+        }
+
+        public double AddWithInc(double n1, double n2)
+        {
+            return n1 + n2 + 1;
         }
 
 
